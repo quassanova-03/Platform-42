@@ -1,0 +1,64 @@
+======================================================================
+                 DAILY TRAIN DELAY REPORT
+======================================================================
+
+Report date       : 2026-10-03
+Trains analyzed   : 42
+Stations analyzed : 1479
+
+HIGHEST RECORDED STATION DELAY
+----------------------------------------------------------------------
+MAIBANG (MBG)
+Train: 12507
+Average delay: 570.0 minutes
+
+TRAIN SUMMARY
+----------------------------------------------------------------------
+Train      Train Name                   Avg Delay
+----------------------------------------------------------------------
+12503      AGTL HUMSAFAR                  344.1 min
+12507      ARONAI EXPRESS                 208.0 min
+05640      KOAA SCL SPL                   206.2 min
+12508      ARONAI EXPRESS                 203.5 min
+12504      AGTL SMVB HUMSAFAR             197.0 min
+14038      SCL S KRANTI EXP               194.6 min
+22501      NEW TINSUKIA EXP               174.2 min
+12516      SCL CBE EXPRESS                170.1 min
+14620      TRIPURA SUNDARI EXP            162.8 min
+14619      TRIPURA SUNDARI EXP            160.7 min
+22512      KARMABHOOMI EXP                156.7 min
+12509      GUWAHATI EXP                   154.1 min
+12510      GHY SMVB EXPRESS               152.4 min
+12515      CBE SCL EXP                    149.7 min
+12519      LTT KYQ AC EXP                 141.2 min
+02501      KOAA AGTL SPL                  141.1 min
+15629      NAGAON EXPRESS                 136.1 min
+22450      PORVOTR S KRNTI                134.9 min
+15630      NAGAON EXPRESS                 123.9 min
+12520      KYQ LTT AC EXP                 118.8 min
+02517      KOAA GHY SPL                   107.9 min
+15648      GHY LTT EXPRESS                105.4 min
+02518      GHY KOAA SPECIAL               101.6 min
+15647      GUWAHATI EXPRES                100.2 min
+15910      AVADH ASSAM EXP                 96.0 min
+05639      SCL KOAA SPECIAL                94.7 min
+22502      NTSK SMVB EXPRESS               92.7 min
+02502      AGTL KOAA SPL                   91.6 min
+15945      LTT DBRG EXPRESS                84.8 min
+15909      AVADH ASSAM EXP                 83.7 min
+15946      DBRG LTT EXPRESS                71.8 min
+13181      KAZIRANGA EXP                   56.4 min
+12424      DBRT RAJDHANI                   53.8 min
+20504      NDLS DBRG RJDHN                 53.5 min
+12346      SARAIGHAT EXP                   45.6 min
+15960      KAMRUP EXPRESS                  44.2 min
+22449      PORVOTR S KRNTI                 43.1 min
+12423      DBRT NDLS RAJDHANI              42.9 min
+20501      TEJAS EXPRESS                   42.3 min
+14037      NDLS S KRANTI EXP               41.5 min
+13182      KAZIRANGA EXP                   33.9 min
+20503      DBRG NDLS RAJEXP                27.6 min
+----------------------------------------------------------------------
+
+End of report.
+======================================================================
