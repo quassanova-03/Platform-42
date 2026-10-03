@@ -263,9 +263,82 @@ Platform_42/
 
 [Cron + daily_update.sh]
 
-## 🚀 Setup
+## Setup
 
-[installation / setup]
+Platform 42 is designed to run in a Linux environment. It can also be
+run through WSL (Windows Subsystem for Linux) on Windows.
+
+#### 1. Clone the repository
+```
+git clone <repository-url>
+cd Platform_42
+```
+#### 2. Verify Python
+```
+python3 --version
+```
+Python 3 is required.
+
+#### 3. Validate the dataset
+```
+python3 scripts/validator.py
+```
+A successful validation should report:
+```
+42 train records
+42 unique train numbers
+42 route files
+42 valid route files
+1479 valid route records
+0 missing route files
+0 errors
+0 warnings
+
+STATUS: VALID
+```
+#### 4. Build the database
+```
+python3 scripts/database.py
+```
+#### 5. Run analytics
+
+For example:
+```
+python3 scripts/analytics.py network
+```
+or:
+```
+python3 scripts/analytics.py top --limit 5
+```
+#### 6. Generate a report
+```
+python3 scripts/report_v2.py
+```
+#### 7. Run the complete pipeline
+```
+bash scripts/daily_update.sh
+```
+
+### Cron Setup
+
+To schedule automatic execution, open the user's Cron configuration:
+```
+crontab -e
+```
+Add a schedule that runs daily_update.sh at the desired interval.
+
+To verify the configured jobs:
+```
+crontab -l
+```
+Cron execution output can be recorded in:
+```
+logs/cron.log
+```
+Note: Uploading Platform 42 to GitHub does not run Cron on GitHub.
+Cron runs in the Linux/WSL environment where the project is installed.
+The repository contains the scripts and configuration needed to reproduce
+the automation locally.
 
 ## ▶️ Usage
 
@@ -275,13 +348,25 @@ Platform_42/
 
 [example report]
 
-## 📁 Dataset
+## Dataset
+Platform 42 uses the DA323 Indian Railway Train Delay Dataset.
 
-[dataset source + important note]
+Dataset source:
+https://github.com/ankitaanand28/DA323_IndianRailwayTrainDelayDatasets
 
-## 📝 Notes
+The repository contains the train list and individual route CSV files used
+by the system.
 
-[static dataset clarification]
+## Notes
+
+Platform 42 is a dataset-based delay analysis system.
+
+The included dataset represents the source data available to the project
+and should not be interpreted as a live railway tracking service.
+
+The automated Cron pipeline periodically reprocesses the local dataset.
+If the underlying CSV files are updated, the next scheduled execution can
+validate, import, analyze, and report on the updated data.
 
 ## 👩‍💻 Author
 
