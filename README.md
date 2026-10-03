@@ -23,30 +23,25 @@ pipeline:
 
 ```text
 Train CSV Data
-      │
-      ▼
-┌───────────────┐
-│   Validator   │
-└───────┬───────┘
-        │
+       │
+       ▼
+   Validator 
+       │
    Valid data?
      │     │
     YES    NO
      │      └──────────► Stop
      ▼
-┌───────────────┐
-│ SQLite Import │
-└───────┬───────┘
-        ▼
-┌───────────────┐
-│   Analytics   │
-└───────┬───────┘
-        ▼
-┌───────────────┐
-│ Daily Report  │
-└───────┬───────┘
-        ▼
-   Cron Automation
+  SQLite Import
+       |
+       ▼
+   Analytics
+       |
+       ▼
+  Daily Report
+       |
+       ▼
+  Cron Automation
 ```
 The complete pipeline has been tested with:
 
@@ -205,9 +200,51 @@ The pipeline uses Cron to schedule the process automatically.
 This allows the entire validation → database → analytics → reporting
 workflow to run without manually executing every step.
 
-## How It Works
-
-[Pipeline diagram]
+## Complete Pipeline
+```
+                 ┌──────────────────┐
+                 │   Railway CSVs   │
+                 └────────┬─────────┘
+                          │
+                          ▼
+                 ┌──────────────────┐
+                 │    Validator     │
+                 │                  │
+                 │ Data quality     │
+                 │ checks           │
+                 └────────┬─────────┘
+                          │
+                    Valid data
+                          │
+                          ▼
+                 ┌──────────────────┐
+                 │  SQLite Database │
+                 │                  │
+                 │ 42 trains        │
+                 │ 1479 routes      │
+                 └────────┬─────────┘
+                          │
+                          ▼
+                 ┌──────────────────┐
+                 │    Analytics     │
+                 │                  │
+                 │ Train            │
+                 │ Station          │
+                 │ Network          │
+                 │ Route            │
+                 └────────┬─────────┘
+                          │
+                          ▼
+                 ┌──────────────────┐
+                 │ Analytical Report│
+                 └────────┬─────────┘
+                          │
+                          ▼
+                 ┌──────────────────┐
+                 │  Bash + Cron     │
+                 │   Automation     │
+                 └──────────────────┘
+```
 
 ## Project Structure
 ```
@@ -251,20 +288,8 @@ Platform_42/
 | **CSV** | Source dataset format |
 | **SQL** | Database querying |
 
-## 📊 Analytics
-
-[commands + what each does]
-
-## 🔍 Data Validation
-
-[validator explanation]
-
-## ⏰ Automated Updates
-
-[Cron + daily_update.sh]
 
 ## Setup
-
 Platform 42 is designed to run in a Linux environment. It can also be
 run through WSL (Windows Subsystem for Linux) on Windows.
 
@@ -340,13 +365,37 @@ Cron runs in the Linux/WSL environment where the project is installed.
 The repository contains the scripts and configuration needed to reproduce
 the automation locally.
 
-## ▶️ Usage
+## What This Project Demonstrates
+Platform 42 brings together several parts of a typical data-processing and
+systems workflow:
+- Structured data validation
+- Relational database design
+- SQL-based querying
+- Python scripting
+- Command-line analytics
+- Linux environment usage
+- Bash scripting
+- Scheduled automation with Cron
+- Pipeline failure handling
+- Automated report generation
+- Working with multiple related CSV datasets
+The focus is not just on analyzing railway delays, but on building a
+repeatable pipeline that can validate, process, analyze, and report on
+data automatically.
 
-[commands]
 
-## 📈 Example Output
+## Example Output
+#### VALIDATION
+<img width="1226" height="608" alt="image" src="https://github.com/user-attachments/assets/a233dd8e-8710-4566-9e84-be7f1db79b06" />
 
-[example report]
+#### ANALYTICS
+<img width="1330" height="322" alt="image" src="https://github.com/user-attachments/assets/1a27b5de-2cca-4a54-bccb-3828cc02e558" />
+
+#### FULL AUTOMATION
+<img width="1228" height="842" alt="image" src="https://github.com/user-attachments/assets/a1ab275c-8bce-4115-a0ec-249407df5888" />
+<img width="1080" height="707" alt="image" src="https://github.com/user-attachments/assets/0ea791b9-a67b-4b10-8bfe-1c36aff9e41e" />
+<img width="828" height="942" alt="image" src="https://github.com/user-attachments/assets/889f02fe-0e62-44fa-ba82-c7bb5f730b47" />
+<img width="937" height="468" alt="image" src="https://github.com/user-attachments/assets/1c8a8c04-c786-49b6-a629-c3d2978e46e2" />
 
 ## Dataset
 Platform 42 uses the DA323 Indian Railway Train Delay Dataset.
