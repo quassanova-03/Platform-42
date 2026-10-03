@@ -416,7 +416,3 @@ and should not be interpreted as a live railway tracking service.
 The automated Cron pipeline periodically reprocesses the local dataset.
 If the underlying CSV files are updated, the next scheduled execution can
 validate, import, analyze, and report on the updated data.
-
-## 👩‍💻 Author
-
-[you]
