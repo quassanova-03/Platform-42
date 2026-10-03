@@ -248,7 +248,7 @@ workflow to run without manually executing every step.
 
 ## Project Structure
 ```
-Platform_42/
+Trians_Timetable/
 │
 ├── Train_List.csv
 │
